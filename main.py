@@ -1,8 +1,17 @@
 from time import sleep
-import requests
-import json
 import os
-from colorama import init, Fore, Style
+
+try:
+    import requests
+except ImportError:
+    os.system("pip3 install requests")
+    
+import json
+
+try:
+    from colorama import init, Fore, Style
+except ImportError:
+    os.system("pip3 install colorama")
 
 ##
 ## Declare your UID below in quotes
