@@ -24,9 +24,16 @@ init()
 
 # Check if windows
 if os.name == "nt":
-    from win10toast import ToastNotifier
+    try:
+        from win10toast import ToastNotifier
+    except ImportError:
+        os.system("pip3 install win10toast")
 else:
-    import notify2
+    try:
+        import notify2
+    except ImportError:
+        os.system("pip3 install notify2")
+     
 
 
 # Clear function
