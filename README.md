@@ -11,6 +11,8 @@
 * Python 3.8
 * Requests
 * Colorama
+* Notify2 (Linux Only)
+* win10toast (Windows Only)
 
 ### Setup
 
