@@ -5,6 +5,7 @@ try:
     import requests
 except ImportError:
     os.system("pip3 install requests")
+    import requests
     
 import json
 
@@ -12,12 +13,14 @@ try:
     from colorama import init, Fore, Style
 except ImportError:
     os.system("pip3 install colorama")
+    from colorama import init, Fore, Style
 
 ##
 ## Declare your UID below in quotes
 ##
 
 uid = "PUT_ID_HERE" 
+
 
 # Initialise Colorama
 init()
@@ -28,11 +31,13 @@ if os.name == "nt":
         from win10toast import ToastNotifier
     except ImportError:
         os.system("pip3 install win10toast")
+        from win10toast import ToastNotifier
 else:
     try:
         import notify2
     except ImportError:
         os.system("pip3 install notify2")
+        import notify2
      
 
 
