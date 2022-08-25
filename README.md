@@ -4,7 +4,7 @@
 ### Features
 
 * Notifications once one of your friends comes online
-* Auto game closure if a friend comes online
+* Auto game closure if a friend comes online (Windows Only)
 
 ### Requirements
 
