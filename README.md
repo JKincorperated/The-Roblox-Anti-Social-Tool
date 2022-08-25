@@ -3,7 +3,7 @@
 
 ### Features
 
-* Notifications once one of your friends are online
+* Notifications once one of your friends comes online
 * Auto game closure if a friend comes online
 
 ### Requirements
