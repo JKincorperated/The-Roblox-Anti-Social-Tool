@@ -18,10 +18,19 @@
 from time import sleep
 import os
 import configparser
-
+import json
+import sys
 import requests
 from colorama import init, Fore, Style
 from win10toast import ToastNotifier
+
+if getattr(sys, 'frozen', False):
+    application_path = os.path.dirname(sys.executable)
+elif __file__:
+    application_path = os.path.dirname(__file__)
+
+os.chdir(application_path)
+
 
 ##
 ## Declare your UID below in quotes
