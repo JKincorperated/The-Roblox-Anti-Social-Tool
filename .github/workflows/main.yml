@@ -30,11 +30,11 @@ jobs:
           
       - name: Install Dependencies
         run: |
-          python3 -m pip install -U nuitka
-          python3 -m pip install -U requests
-          python3 -m pip install -U colorama
-          python3 -m pip install -U win10toast
-          python3 -m pip install -U notify2
+          pip3 install -U nuitka
+          pip3 install -U requests
+          pip3 install -U colorama
+          pip3 install -U win10toast
+          pip3 pip install -U notify2
 
       - name: Run a multi-line script
         run: |
@@ -56,11 +56,11 @@ jobs:
           
       - name: Install Dependencies
         run: |
-          python3 -m pip install -U nuitka
-          python3 -m pip install -U requests
-          python3 -m pip install -U colorama
-          python3 -m pip install -U win10toast
-          python3 -m pip install -U notify2
+          pip3 install -U nuitka
+          pip3 install -U requests
+          pip3 install -U colorama
+          pip3 install -U win10toast
+          pip3 install -U notify2
 
       - name: Run a multi-line script
         run: |
@@ -81,11 +81,11 @@ jobs:
           
       - name: Install Dependencies
         run: |
-          python3 -m pip install -U nuitka
-          python3 -m pip install -U requests
-          python3 -m pip install -U colorama
-          python3 -m pip install -U win10toast
-          python3 -m pip install -U notify2
+          pip3 install -U nuitka
+          pip3 install -U requests
+          pip3 install -U colorama
+          pip3 install -U win10toast
+          pip3 install -U notify2
 
       - name: Run a multi-line script
         run: |
