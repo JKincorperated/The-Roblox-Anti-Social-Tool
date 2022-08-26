@@ -27,8 +27,8 @@ from win10toast import ToastNotifier
 ## Declare your UID below in quotes
 ##
 
-another_config = configparser.ConfigParser()
-another_config.read('shouldterminate.conf')
+config = configparser.ConfigParser()
+config.read('shouldterminate.conf')
 
 uid = str(config['DEFAULT']['userid'])
 
