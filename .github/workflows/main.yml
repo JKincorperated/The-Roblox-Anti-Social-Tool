@@ -22,9 +22,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: Run a one-line script
-        run: ls .
+      - name: Setup Python
+      - uses: actions/setup-python@v4.2.0
+        with:
+          python-version: 3.9
+          # File containing the Python version to use. Example: .python-version
+          
+      - name: Install Dependencies
+        run: |
+          python3 -m pip install -U nuitka
+          python3 -m pip install -U requests
+          python3 -m pip install -U colorama
+          python3 -m pip install -U win10toast
+          python3 -m pip install -U notify2
 
       - name: Run a multi-line script
         run: |
@@ -38,9 +48,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Setup Python
+      - uses: actions/setup-python@v4.2.0
+        with:
+          python-version: 3.9
+          # File containing the Python version to use. Example: .python-version
+          
+      - name: Install Dependencies
+        run: |
+          python3 -m pip install -U nuitka
+          python3 -m pip install -U requests
+          python3 -m pip install -U colorama
+          python3 -m pip install -U win10toast
+          python3 -m pip install -U notify2
 
       - name: Run a multi-line script
         run: |
@@ -49,13 +69,23 @@ jobs:
 
   build-macos:
 
-    runs-on: macos-12
+    runs-on: macos-lates
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Setup Python
+      - uses: actions/setup-python@v4.2.0
+        with:
+          python-version: 3.9
+          # File containing the Python version to use. Example: .python-version
+          
+      - name: Install Dependencies
+        run: |
+          python3 -m pip install -U nuitka
+          python3 -m pip install -U requests
+          python3 -m pip install -U colorama
+          python3 -m pip install -U win10toast
+          python3 -m pip install -U notify2
 
       - name: Run a multi-line script
         run: |
