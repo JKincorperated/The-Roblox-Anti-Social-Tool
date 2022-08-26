@@ -19,19 +19,9 @@ from time import sleep
 import os
 import configparser
 
-try:
-    import requests
-except ImportError:
-    os.system("pip3 install requests")
-    import requests
-    
-import json
-
-try:
-    from colorama import init, Fore, Style
-except ImportError:
-    os.system("pip3 install colorama")
-    from colorama import init, Fore, Style
+import requests
+from colorama import init, Fore, Style
+from win10toast import ToastNotifier
 
 ##
 ## Declare your UID below in quotes
@@ -46,25 +36,9 @@ uid = str(config['DEFAULT']['userid'])
 # Initialise Colorama
 init()
 
-# Check if windows
-if os.name == "nt":
-    try:
-        from win10toast import ToastNotifier
-    except ImportError:
-        os.system("pip3 install win10toast")
-        from win10toast import ToastNotifier
-else:
-    try:
-        import notify2
-    except ImportError:
-        os.system("pip3 install notify2")
-        import notify2
-     
-
-
 # Clear function
 def cls():
-    os.system('cls' if os.name=='nt' else 'clear')
+    os.system('clear')
 
 # Initialisation
 cls()
@@ -96,27 +70,19 @@ while True:
         if shouldnotify:
             shouldnotify = False
             
-            # Check OS
-            if os.name == "nt":
-                # Check if code should terminate game (windows only)
-                try:
-                    if str(config['DEFAULT']['autoterminate']) == "yes":
-                        os.system("""start cmd /c "taskkill /f /IM RobloxPlayerBeta.exe" """)
-                except FileNotFoundError:
-                    pass
+            # Check if code should terminate game
+            try:
+                if str(config['DEFAULT']['autoterminate']) == "yes":
+                    os.system("""start cmd /c "taskkill /f /IM RobloxPlayerBeta.exe" """)
+            except FileNotFoundError:
+                pass
 
-                # Notify
-                toaster = ToastNotifier()
-                toaster.show_toast("Someone Is Online",
-                                "Terminating Game",
-                                duration=10)
+            # Notify
+            toaster = ToastNotifier()
+            toaster.show_toast("Someone Is Online",
+                            "Terminating Game",
+                            duration=10)
 
-            else:
-
-                # Notify
-                notify2.init("Roblox Notifier")
-                notice = notify2.Notification("Roblox Notifier", "Someone Is Online")
-                notice.show()
 
     else:
         # Reset once no one is online
