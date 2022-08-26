@@ -69,7 +69,7 @@ jobs:
 
   build-macos:
 
-    runs-on: macos-lates
+    runs-on: macos-latest
 
     steps:
       - uses: actions/checkout@v3
