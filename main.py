@@ -17,6 +17,7 @@
     
 from time import sleep
 import os
+import configparser
 
 try:
     import requests
@@ -36,7 +37,10 @@ except ImportError:
 ## Declare your UID below in quotes
 ##
 
-uid = "PUT_ID_HERE" 
+another_config = configparser.ConfigParser()
+another_config.read('shouldterminate.conf')
+
+uid = str(config['DEFAULT']['userid'])
 
 
 # Initialise Colorama
@@ -96,7 +100,7 @@ while True:
             if os.name == "nt":
                 # Check if code should terminate game (windows only)
                 try:
-                    if "1" in open("shouldterminate.conf", "r").read():
+                    if str(config['DEFAULT']['autoterminate']) == "yes":
                         os.system("""start cmd /c "taskkill /f /IM RobloxPlayerBeta.exe" """)
                 except FileNotFoundError:
                     pass
