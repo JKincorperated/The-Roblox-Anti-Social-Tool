@@ -18,5 +18,5 @@
 
 * Download and extract
 * Put your account userid into uid variable with quotes
+* Paste your roblox user ID into shouldterminate.conf
 * Execute the script
-* If you want to disable the auto-terminate feature change, edit the file "shouldterminate.conf" and delete the 1
