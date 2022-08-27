@@ -30,6 +30,8 @@ jobs:
           
       - name: Install Dependencies
         run: |
+          sudo apt-get install python-dbus 
+          pip3 install dbus-python
           pip3 install -U nuitka
           pip3 install -U requests
           pip3 install -U colorama
@@ -79,6 +81,7 @@ jobs:
           
       - name: Install Dependencies
         run: |
+          brew install dbus
           pip3 install -U nuitka
           pip3 install -U requests
           pip3 install -U colorama
