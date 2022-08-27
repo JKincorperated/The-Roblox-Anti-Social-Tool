@@ -30,6 +30,7 @@ jobs:
           
       - name: Install Dependencies
         run: |
+          sudo apt-get install libdbus-1-dev libdbus-glib-1-dbus
           sudo apt-get install python-dbus 
           pip3 install dbus-python
           pip3 install -U nuitka
