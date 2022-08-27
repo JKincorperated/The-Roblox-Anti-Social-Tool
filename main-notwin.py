@@ -46,7 +46,7 @@ init()
 
 # Clear function
 def cls():
-    os.system('cls')
+    os.system('clear')
 
 # Initialisation
 cls()
