@@ -40,7 +40,7 @@ jobs:
 
       - name: Compile
         run: |
-          python -m nuitka main-notwin.py
+          python -m nuitka --standalone --onefile --follow-imports --follow-stdlib -o linux-compiled main-notwin.py 
           
   
   build-windows:
@@ -55,16 +55,16 @@ jobs:
           python-version: 3.9
           # File containing the Python version to use. Example: .python-version
           
-      - name: Compile
+      - name: Install Dependencies
         run: |
           pip3 install -U nuitka
           pip3 install -U requests
           pip3 install -U colorama
           pip3 install -U win10toast
 
-      - name: Run a multi-line script
+      - name: Compile
         run: |
-          python -m nuitka main-win.py
+          python -m nuitka --standalone --onefile --follow-imports --follow-stdlib -o windows-compiled.exe nuitka main-win.py
 
   build-macos:
 
@@ -78,7 +78,7 @@ jobs:
           python-version: 3.9
           # File containing the Python version to use. Example: .python-version
           
-      - name: Compile
+      - name: Install Dependencies
         run: |
           brew install dbus
           pip3 install -U nuitka
@@ -86,6 +86,6 @@ jobs:
           pip3 install -U colorama
           pip3 install -U notify2
 
-      - name: Run a multi-line script
+      - name: Compile
         run: |
-          python -m nuitka main-notwin.py
+          python -m nuitka --standalone --onefile --follow-imports --follow-stdlib --macos-create-app-bundle -o macos-compiled.dmg main-notwin.py
