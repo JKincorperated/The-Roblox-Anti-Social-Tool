@@ -59,20 +59,20 @@ while True:
 
     # Getting data from Roblox
 
-    json2 = requests.get("https://api.roblox.com/users/" + uid + "/friends").text
+    json2 = requests.get("https://friends.roblox.com/v1/users/" + uid + "/friends").text
     json2 = json.loads(json2)
     cls()
 
     # Check each player status and print
     for i in json2:
-        length = len(i["Username"])
+        length = len(i["name"])
         print(Style.RESET_ALL,end="")
-        if i["IsOnline"]:
+        if i["isOnline"]:
             someoneonline = True
             x = Fore.GREEN + (30 - length) * " " + "Online"
         else:
             x = Fore.RED + (30 - length) * " " + "Offline"
-        print(i["Username"] + " - " + x)
+        print(i["name"] + " - " + x)
 
     # Check if anyone was online
     if someoneonline:
